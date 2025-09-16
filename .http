@@ -1,0 +1,30 @@
+### Variables
+
+@baseUrl = localhost:3004
+
+@contentType = application/json
+
+
+
+# basic request
+http://{{baseUrl}}
+
+
+# basic request
+GET http://{{baseUrl}}/api/tasks
+
+# request by id
+GET http://{{baseUrl}}/api/tasks/6a4b0bb4-2645-4e85-917c-394c348bd949
+
+### Create a new task
+
+POST http://{{baseUrl}}/api/tasks
+Content-Type: {{contentType}}
+
+{
+    "title": "Learn the Nest2 from http visual code",
+    "description": "Complete the NestJS course",
+    "status": "OPEN"
+}
+
+ 
