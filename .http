@@ -14,7 +14,7 @@ http://{{baseUrl}}
 GET http://{{baseUrl}}/api/tasks
 
 # request by id
-GET http://{{baseUrl}}/api/tasks/6a4b0bb4-2645-4e85-917c-394c348bd949
+GET http://{{baseUrl}}/api/tasks/0a4acdb1-ae86-40fe-bb44-50197df33ca9
 
 ### Create a new task
 
@@ -22,9 +22,20 @@ POST http://{{baseUrl}}/api/tasks
 Content-Type: {{contentType}}
 
 {
-    "title": "Learn the Nest2 from http visual code",
+    "title": "Learn the Nest2 from http visual code 2",
     "description": "Complete the NestJS course",
     "status": "OPEN"
 }
 
+
+### update a task
+
+PATCH http://{{baseUrl}}/api/tasks
+Content-Type: {{contentType}}
+
+{
+    "status": "OPEN"
+}
+
+ 
  
