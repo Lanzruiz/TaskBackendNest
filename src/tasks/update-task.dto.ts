@@ -1,9 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsEnum, IsNotEmpty } from 'class-validator';
-import { TaskStatus } from './task.model';
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateTaskDTO } from './create-task.dto';
 
-export class UpdateTaskStatusDTO {
-  @IsNotEmpty()
-  @IsEnum(TaskStatus)
-  status: TaskStatus;
-}
+export class UpdateTaskDto extends PartialType(CreateTaskDTO) {}

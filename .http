@@ -10,32 +10,40 @@
 http://{{baseUrl}}
 
 
-# basic request
+### Get all Tasks
 GET http://{{baseUrl}}/api/tasks
 
-# request by id
-GET http://{{baseUrl}}/api/tasks/0a4acdb1-ae86-40fe-bb44-50197df33ca9
+
+### Get one Task
+GET http://{{baseUrl}}/api/tasks/{{taskId}}
+
 
 ### Create a new task
-
+# @name createTask
 POST http://{{baseUrl}}/api/tasks
 Content-Type: {{contentType}}
 
 {
-    "title": "Learn the Nest2 from http visual code 2",
+    "title": "Learn the Nest2 from http visual code 3",
     "description": "Complete the NestJS course",
     "status": "OPEN"
 }
-
+### Set the task id
+@taskId = {{createTask.response.body.id}}
 
 ### update a task
 
-PATCH http://{{baseUrl}}/api/tasks
+PATCH http://{{baseUrl}}/api/tasks/{{taskId}}
 Content-Type: {{contentType}}
 
 {
-    "status": "OPEN"
+    "status": "DONE"
 }
 
+ 
+### Delete a task
+
+Delete http://{{baseUrl}}/api/tasks/{{taskId}}
+ 
  
  
